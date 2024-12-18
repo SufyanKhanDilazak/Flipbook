@@ -5,31 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Viewer</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
             background-color: #f0f0f0;
         }
         iframe {
-            display: block;
-            margin: auto;
+            width: 90%;
+            max-width: 1200px;
+            height: 90vh;
             border: none;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        div {
-            font-size: 14px;
-            line-height: 1.6;
+        @media screen and (max-width: 768px) {
+            iframe {
+                width: 100%;
+                height: 100vh;
+            }
         }
     </style>
 </head>
 <body>
-    <iframe src="https://flowpaper.com/flipbook/https://pdfwebsite.neocities.org/welcome%20pack%20word.docx.pdf" width="70%" height="800" style="border: none;" allowFullScreen>
-    </iframe>
+    <div class="pdf-container">
+        <iframe 
+            src="https://flowpaper.com/flipbook/https://pdfwebsite.neocities.org/welcome%20pack%20word.docx.pdf" 
+            allowfullscreen 
+            webkitallowfullscreen 
+            mozallowfullscreen>
+            Your browser does not support iframes.
+        </iframe>
+    </div>
 </body>
 </html>
-
